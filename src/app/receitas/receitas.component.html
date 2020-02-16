@@ -1,0 +1,26 @@
+<nav class="header">
+  <img src="../../assets/images/logo-coco-bambu-mini.png" style="padding: 1em;">
+  <div class="busca"><input type="text" size="50" class="search" placeholder="Buscar Receita..."></div>
+  <div class="links">
+    <a href="/pedidos" class="insideLink"><img src="../../assets/images/icon-chef-hat.png"><span>Pedidos</span></a>
+    <a href="/receitas" class="insideLink"><img src="../../assets/images/icon-recipe.png">Receitas</a>
+    <a href="/logout" class="insideLink"><img src="../../assets/images/icon-login.png">Logout</a>
+  </div>
+</nav>
+<div class="container-receitas">
+  <h2>Últimos pedidos</h2>
+  <tr class="receitas" *ngFor="let receita of receitas">
+    <td><img src="../../assets/images/{{receita.imagem}}"></td>
+    <td class="textoReceita"><span class="nomeReceita">{{receita.nome}}</span><br><br><span
+        class="descricaoReceita">{{receita.descricao}}</span></td>
+    <a class="link-receita" onclick="detalhe(receita._id)">
+
+      <td >
+        <span class="button-link-receita">
+          Ver Receita
+        </span>
+
+      </td>
+    </a>
+  </tr>
+</div>

@@ -1,0 +1,79 @@
+.header {
+  background-color: #393939;
+  height: 4em;
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.container-receitas {
+  padding: 1em;
+}
+
+.insideLink {
+  color: #fafafa;
+  display: inline-grid;
+  padding: 0.4em 1em 1em;
+  justify-items: center;
+}
+
+.receitas {
+  display: inline-flex;
+  border-bottom: 1px solid #fafafa;
+  border-top: 1px solid #fafafa;
+  padding: 1em;
+}
+
+.nomeReceita {
+  font-weight: 800;
+}
+
+.descricaoReceita {
+  font-size: 0.8em;
+}
+
+.textoReceita {
+  max-width: 45em;
+  padding: 1em;
+}
+
+a:hover {
+  color: #f67a1f;
+  background-color: #fafafa;
+}
+
+.busca {
+  padding: 1em;
+}
+
+.search {
+  height: 3em;
+  border-radius: 0.3em;
+  background: url('../../assets/images/icon-busca.png') no-repeat right center;
+  background-color: #fafafa;
+  text-indent: 1em;
+  font-style: italic;
+}
+
+.link-receita {
+  background-color: #f67a1f;
+  padding: 1.2em 1em 0em .7em;
+  height: 5em;
+  max-width: 5em;
+  border-radius: 50%;
+  color: #fff;
+  margin: 3em;
+  text-align: center;
+}
+
+.button-link-receita {
+  font-weight: 800;
+}
+
+.link-receita>a:hover {
+  color: #f67a1f;
+  background-color: #fafafb;
+  border-radius: 50%;
+  height: 5em;
+  max-width: 5em;
+}
