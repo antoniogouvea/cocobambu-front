@@ -1,6 +1,11 @@
 <nav class="header">
   <img src="../../assets/images/logo-coco-bambu-mini.png" style="padding: 1em;">
-  <div class="busca"><input type="text" size="50" class="search" placeholder="Buscar Receita..."></div>
+  <form [formGroup]="form">
+
+    <div class="busca"><input type="text" size="40" class="search" placeholder="Buscar Receita..." class="form-control"
+        id="nome" formControlName="nome" [(ngModel)]="nome"></div>
+  </form>
+
   <div class="links">
     <a href="/pedidos" class="insideLink"><img src="../../assets/images/icon-chef-hat.png"><span>Pedidos</span></a>
     <a href="/receitas" class="insideLink"><img src="../../assets/images/icon-recipe.png">Receitas</a>
@@ -15,7 +20,7 @@
         class="descricaoReceita">{{receita.descricao}}</span></td>
     <a class="link-receita" (click)="detalhe(receita._id)">
 
-      <td >
+      <td>
         <span class="button-link-receita">
           Ver Receita
         </span>

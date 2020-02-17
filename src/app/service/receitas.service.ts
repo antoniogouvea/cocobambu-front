@@ -18,4 +18,9 @@ export class ReceitasService {
     .set('id', id)
     return this.http.get(`${this.apiUrl}?${params}`)
   }
+  public continuosTypingNome(nome: string) {
+    const params = new HttpParams()
+    .set('nome', nome)
+    return this.http.get(`${this.apiUrl}?${params}`)
+  }
 }

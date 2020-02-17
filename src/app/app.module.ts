@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './service/login-service.service';
 import { ReceitasComponent } from './receitas/receitas.component';
 import { ReceitasDetalheComponent } from './receitas/receitas-detalhe/receitas-detalhe.component'
+
 @NgModule({
   declarations: [
     AppComponent,

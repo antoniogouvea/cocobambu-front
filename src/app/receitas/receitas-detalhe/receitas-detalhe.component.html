@@ -4,9 +4,9 @@
       <a href="/receitas"><img src="../../../assets/images/icon-back.png"> <span class="textoVoltar">Voltar</span></a>
     </div>
     <div class="tempoPreparo">
-        <img src="../../../assets/images/icon-time.png">
-        <span class="textoTempo">Tempo de preparo<br>
-      {{tempoPreparo}} minutos</span>
+      <img src="../../../assets/images/icon-time.png">
+      <span class="textoTempo">Tempo de preparo<br>
+        {{tempoPreparo}} minutos</span>
     </div>
     <div class="descricao">
       <div class="nomeReceita">
@@ -22,7 +22,8 @@
     <form action="#" class="form">
       <tr *ngFor="let ingrediente of ingredientes; let i = index;">
         <p>
-          <input type="checkbox" id="ingrediente{{i}}" name="ingrediente{{i}}" (change)="checkBoxIngredientes($event)" />
+          <input type="checkbox" id="ingrediente{{i}}" name="ingrediente{{i}}"
+            (change)="checkBoxIngredientes($event)" />
           <label for="ingrediente{{i}}">{{ingrediente}}</label>
         </p>
       </tr>
@@ -43,10 +44,51 @@
   </div>
 </div>
 <footer>
-<div class="porcentagem"> Status de {{porcentagem}} % pronto e {{minutos}} minuto(s) utilizado(s)
+  <div class="porcentagem"> Status de {{porcentagem}} % pronto e {{minutos}} minuto(s) utilizado(s)
 
-    <p><ngb-progressbar type="warning" textType="dark" [value]=porcentagem showValue="true"></ngb-progressbar></p>
+    <p>
+      <ngb-progressbar type="warning" textType="dark" [value]=porcentagem showValue="true"></ngb-progressbar>
+    </p>
 
-</div>
-<div class="finalizar"><button class="botaoFinalizar" [disabled]=!allChecked type="submit">Iniciar preparação</button></div>
+  </div>
+  <div class="finalizar">
+    <div *ngIf="!allChecked">
+      <button class="botaoFinalizar" type="submit" (click)="open(naoFinalizado)">Iniciar preparação</button>
+    </div>
+    <div *ngIf="allChecked">
+      <button class="botaoFinalizarFinal" type="submit" (click)="openFinal(finalizado)">Finalizar</button>
+    </div>
+  </div>
 </footer>
+
+<ng-template #naoFinalizado let-c="close" let-d="dismiss">
+
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Pra iniciar a preparação, certifique-se de que você tem todos os ingredientes selecionados.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Entendi</button>
+  </div>
+</ng-template>
+
+<ng-template #finalizado let-c="close" let-d="dismiss">
+
+    <div class="modal-header">
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <p><b>Obrigado</b></p>
+      <p>Prato Finalizado com sucesso em {{minutos}} minutos e {{segundos}} segundos !</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Ok</button>
+    </div>
+  </ng-template>
+  
