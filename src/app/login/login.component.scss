@@ -1,7 +1,7 @@
 $grid__bp--md: 768;
 $grid__cols: 12;
 
-.container-login {
+.container-form {
   display: grid;
   padding-top: 25%;
 }
@@ -47,13 +47,13 @@ input::placeholder{
     text-align: auto;
 }
 
-.container {
+.container-login {
   background-image: url('../../assets/images/img-bg-login.jpg') !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-//   max-width: $grid__bp--md * 1px;
   margin: 0 auto;
+  height: 100%;
 
   &--fluid {
     margin: 0;

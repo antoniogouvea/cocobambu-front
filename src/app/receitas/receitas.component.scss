@@ -13,7 +13,7 @@
 .insideLink {
   color: #fafafa;
   display: inline-grid;
-  padding: 0.4em 1em 1em;
+  padding: 0.4em 0.5em 1em 0;
   justify-items: center;
 }
 
@@ -40,6 +40,7 @@
 a:hover {
   color: #f67a1f;
   background-color: #fafafa;
+  text-decoration: none;
 }
 
 .busca {
@@ -47,7 +48,7 @@ a:hover {
 }
 
 .search {
-  height: 3em;
+  height: 2em;
   border-radius: 0.3em;
   background: url('../../assets/images/icon-busca.png') no-repeat right center;
   background-color: #fafafa;

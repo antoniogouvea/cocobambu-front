@@ -1,0 +1,174 @@
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:not(:checked)+label,
+[type="checkbox"]:checked+label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked)+label:before,
+[type="checkbox"]:checked+label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked)+label:after,
+[type="checkbox"]:checked+label:after {
+  content: '\2713\0020';
+  position: absolute;
+  left: 0.07em;
+  top: 0.04em;
+  font-size: 1.3em;
+  line-height: 0.8;
+  color: #09ad7e;
+  transition: all .2s;
+  font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked)+label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="checkbox"]:checked+label:after {
+  background-color: #66bb6a;
+  border: 1px solid #66bb6a;
+  border-radius: 50%;
+}
+
+/* accessibility */
+[type="checkbox"]:checked:focus+label:before,
+[type="checkbox"]:not(:checked):focus+label:before {
+  border: 2px dotted blue;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 2px solid #4778d9 !important;
+}
+
+.ingredientes {
+  margin: 3em;
+}
+
+.passos {
+  margin: 3em;
+}
+
+.form {
+  margin: 1em;
+}
+
+.imagem {
+  width: 100%;
+  max-height: 40em;
+}
+
+.imagem-receita {
+  height: 35em;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+.voltar {
+  color: white;
+  float: left;
+  font-size: 1.5em;
+  margin: 1em;
+  display: flex;
+}
+
+.tempoPreparo {
+  float: right;
+  border: 1px solid white;
+  background-color: white;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 0.4em;
+  display: inline-flex;
+}
+
+.textoTempo {
+  margin-left: 0.7em;
+  font-weight: 900;
+}
+
+.textoTempo::first-line {
+  font-weight: 500;
+}
+
+.textoVoltar {
+  padding-top: 0.2em;
+  color: white;
+}
+
+.nomeReceita {
+  color: #fafafa;
+  font-weight: 900;
+  font-size: 2em;
+  padding-bottom: 1em;
+  text-shadow: 2px 2px #000;
+
+}
+
+.descricaoReceita {
+  color: #fafafa;
+  text-shadow: 2px 2px #000;
+
+}
+
+.descricao {
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  margin: 0em 2em 1em 3em;
+}
+
+.passo {
+  display: flex;
+}
+
+a {
+  display: inline-flex;
+}
+
+footer {
+  background-color: #f2f0f1;
+  height: 4em;
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.botaoFinalizar:disabled {
+  color: #fafafa;
+}
+
+.botaoFinalizar {
+  height: 3em;
+  border-style: none;
+  margin: 0.5em;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: white;
+  background-color: orange;
+}

@@ -1,1 +1,52 @@
-<p>receitas-detalhe works!</p>
+<div class="container-detalhe">
+  <div class="imagem-receita" [ngStyle]="{'background-image': 'url(../../../assets/images/'+ imagem + ')'}">
+    <div class="voltar">
+      <a href="/receitas"><img src="../../../assets/images/icon-back.png"> <span class="textoVoltar">Voltar</span></a>
+    </div>
+    <div class="tempoPreparo">
+        <img src="../../../assets/images/icon-time.png">
+        <span class="textoTempo">Tempo de preparo<br>
+      {{tempoPreparo}} minutos</span>
+    </div>
+    <div class="descricao">
+      <div class="nomeReceita">
+        {{nomeReceita}}
+      </div>
+      <div class="descricaoReceita">
+        {{descricaoReceita}}
+      </div>
+    </div>
+  </div>
+  <div class="ingredientes">
+    <h2>Ingredientes</h2>
+    <form action="#" class="form">
+      <tr *ngFor="let ingrediente of ingredientes; let i = index;">
+        <p>
+          <input type="checkbox" id="ingrediente{{i}}" name="ingrediente{{i}}" (change)="checkBoxIngredientes($event)" />
+          <label for="ingrediente{{i}}">{{ingrediente}}</label>
+        </p>
+      </tr>
+    </form>
+
+  </div>
+  <div class="passos">
+    <h2>Modo de Preparo</h2>
+    <form action="#" class="form">
+
+      <tr *ngFor="let passo of passos; let i = index">
+        <p>
+          <input type="checkbox" id="passo{{i}}" name="passo{{i}}" (change)="checkBoxPassos($event)" />
+          <label for="passo{{i}}" class="passo">{{passo}}</label>
+        </p>
+      </tr>
+    </form>
+  </div>
+</div>
+<footer>
+<div class="porcentagem"> Status de {{porcentagem}} % pronto e {{minutos}} minuto(s) utilizado(s)
+
+    <p><ngb-progressbar type="warning" textType="dark" [value]=porcentagem showValue="true"></ngb-progressbar></p>
+
+</div>
+<div class="finalizar"><button class="botaoFinalizar" [disabled]=!allChecked type="submit">Iniciar preparação</button></div>
+</footer>
