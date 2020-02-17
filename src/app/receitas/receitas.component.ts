@@ -27,14 +27,12 @@ public form: FormGroup;
         if (queryField !== undefined && queryField !== '' && queryField !== null) {
           this.receitasService.continuosTypingNome(queryField).subscribe((response) => {
             this.receitas = response
-            console.log(response)
           })
         }
       })
 
 
     this.receitasService.getAllReceitas().subscribe(resposta =>{
-      console.log(resposta)
       this.receitas = resposta
     })
   }

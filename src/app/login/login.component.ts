@@ -34,8 +34,7 @@ export class LoginComponent implements OnInit {
   async onSubmit(customerData) {
 
     this.loginService.login(customerData).subscribe(resposta =>{
-      console.log(resposta)
-      // this.router('/receitas')
+
       this.router.navigate(["/receitas"])
     }, error => {
       console.log(error.error);
